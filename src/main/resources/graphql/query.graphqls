@@ -1,0 +1,4 @@
+# 루트
+type Query{
+    echoMember(id:Int,name:String):Member
+}
