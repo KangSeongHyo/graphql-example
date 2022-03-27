@@ -23,11 +23,15 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:12.0.0'
+    implementation 'org.modelmapper:modelmapper:3.1.0'
+
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
     runtimeOnly 'mysql:mysql-connector-java'
     annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:12.0.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

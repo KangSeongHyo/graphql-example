@@ -1,4 +1,5 @@
 # 루트
 type Query{
-    echoMember(id:Int,name:String):Member
+    getMemberList : [Member]
+    getMember(id:Int!) : Member
 }

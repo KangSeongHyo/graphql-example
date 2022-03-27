@@ -1,0 +1,9 @@
+type Mutation{
+    createMember(memberDTO : MemberDTO) : Int
+}
+
+input MemberDTO{
+    name : String
+    age  : Int
+    memberType : MemberType
+}

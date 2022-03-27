@@ -1,5 +1,27 @@
-# 회원 타입
+# 회원
 type Member{
-    id   : Int!
+    id   : Int
     name : String
+    age  : Int
+    memberType : MemberType
+    manager : Manager
 }
+
+# 회원등급
+enum MemberType{
+    GOLD,SILVER,BRONZE
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
