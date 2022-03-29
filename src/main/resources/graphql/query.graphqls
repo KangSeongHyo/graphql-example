@@ -1,5 +1,5 @@
 # 루트
 type Query{
-    getMemberList : [Member]
-    getMember(id:Int!) : Member
+    memberList : [Member]
+    member(id:Int!) : Member
 }

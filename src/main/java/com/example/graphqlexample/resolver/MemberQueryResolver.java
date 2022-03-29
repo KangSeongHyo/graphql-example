@@ -21,14 +21,14 @@ public class MemberQueryResolver implements GraphQLQueryResolver {
     private final MemberRepository memberRepository;
     private final ModelMapper modelMapper;
 
-    public List<MemberDTO> getMemberList(){
+    public List<MemberDTO> memberList(){
         List<Member> memberList = memberRepository.findAll();
         return memberList
                 .stream().map(member -> modelMapper.map(member, MemberDTO.class))
                 .collect(Collectors.toList());
     }
 
-    public MemberDTO getMember(Long id){
+    public MemberDTO member(Long id){
         Member member = memberRepository.findById(id).orElse(null);
         MemberDTO memberDTO = modelMapper.map(member, MemberDTO.class);
         memberDTO.setManager(SilverManager.builder().name("kim").score(5).build());
