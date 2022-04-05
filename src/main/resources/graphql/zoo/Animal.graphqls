@@ -1,0 +1,9 @@
+# 동물
+type AnimalDTO{
+    id : Int
+    name : String
+    age  : Int
+    kind : String
+    animalType : AnimalType
+    zookeepers : [EmployeeDTO]
+}

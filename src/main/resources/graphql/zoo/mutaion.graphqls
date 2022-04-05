@@ -1,0 +1,26 @@
+# 동물원 Mutation
+type Mutation{
+
+    # 동물원에 동물을 등록
+    registerAnimal(inputAnimal:InputAnimal):AnimalDTO
+    # 동물원에 직원을 등록
+    registerEmployee(inputEmployee:InputEmployee):EmployeeDTO
+    # 동물을 사육사에게 배정
+    assignAnimalToZookeeper(animalId:Int,employeeId:Int):AnimalDTO
+
+}
+
+# 동물 관련 요청
+input InputAnimal {
+    name : String!
+    age  : Int!
+    kind : String!
+    animalType : AnimalType!
+}
+
+# 직원 관련 요청
+input InputEmployee {
+    name : String!
+    age  : Int!
+    employeeType : EmployeeType!
+}

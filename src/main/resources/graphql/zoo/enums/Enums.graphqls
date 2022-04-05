@@ -1,0 +1,7 @@
+enum AnimalType{
+    MAMMALIA, BIRDS, FISH
+}
+
+enum EmployeeType{
+    ZOOKEEPER, GUIDE, GUARD
+}

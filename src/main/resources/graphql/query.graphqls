@@ -1,5 +1,0 @@
-# 루트
-type Query{
-    memberList : [Member]
-    member(id:Int!) : Member
-}

@@ -1,0 +1,11 @@
+# 동물원 Entry Point
+type Query{
+
+    # 모든 동물을 조회
+    animals :[AnimalDTO]
+    # id에 해당하는 동물 조회
+    animal(id:Int!) : AnimalDTO
+    # 모든 직원을 조회
+    employees : [EmployeeDTO]
+
+}
