@@ -12,7 +12,6 @@ import com.example.graphqlexample.repository.EmployeeRepository;
 import graphql.execution.DataFetcherResult;
 import graphql.kickstart.execution.error.GenericGraphQLError;
 import graphql.kickstart.tools.GraphQLMutationResolver;
-import graphql.schema.DataFetcher;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

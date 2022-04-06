@@ -1,41 +1,26 @@
 package com.example.graphqlexample.resolver.zoo.animal;
 
-import com.example.graphqlexample.domain.zoo.Animal;
-import com.example.graphqlexample.domain.zoo.Employee;
-import com.example.graphqlexample.domain.zoo.EmployeeAnimal;
 import com.example.graphqlexample.dto.AnimalDTO;
 import com.example.graphqlexample.dto.EmployeeDTO;
-import com.example.graphqlexample.repository.AnimalRepository;
+import com.example.graphqlexample.service.ZookeeperService;
 import graphql.kickstart.tools.GraphQLResolver;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.concurrent.CompletableFuture;
 
+@Slf4j
 @RequiredArgsConstructor
 @Component
 public class ZookeeperResolver implements GraphQLResolver<AnimalDTO> {
 
-    private final AnimalRepository animalRepository;
-    private final ModelMapper modelMapper;
+    private final ZookeeperService zookeeperService;
 
-    @Transactional
-    public List<EmployeeDTO> zookeepers(AnimalDTO animalDTO){
+    public CompletableFuture<List<EmployeeDTO>> zookeepers(AnimalDTO animalDTO){
 
-        Animal animal = animalRepository.findById(animalDTO.getId()).orElseThrow();
-
-        List<EmployeeAnimal> employeeAnimalList = animal.getEmployeeAnimalList();
-        List<Employee> employeeList = employeeAnimalList.stream()
-                .map(EmployeeAnimal::getEmployee)
-                .collect(Collectors.toList());
-
-        return employeeList
-                .stream()
-                .map(employee -> modelMapper.map(employee, EmployeeDTO.class))
-                .collect(Collectors.toList());
+        return CompletableFuture.supplyAsync(()-> zookeeperService.getEmployeeDTO(animalDTO));
     }
 
 }
