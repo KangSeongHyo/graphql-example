@@ -1,4 +1,4 @@
-package com.example.graphqlexample.resolver.zoo.animal;
+package com.example.graphqlexample.resolver.zoo.animal.root;
 
 import com.example.graphqlexample.domain.zoo.Animal;
 import com.example.graphqlexample.domain.zoo.Employee;

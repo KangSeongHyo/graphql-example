@@ -1,20 +1,15 @@
-package com.example.graphqlexample.resolver.zoo.animal;
+package com.example.graphqlexample.resolver.zoo.animal.root;
 
 import com.example.graphqlexample.domain.zoo.Animal;
-import com.example.graphqlexample.domain.zoo.Employee;
-import com.example.graphqlexample.domain.zoo.EmployeeAnimal;
 import com.example.graphqlexample.dto.AnimalDTO;
 import com.example.graphqlexample.repository.AnimalRepository;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 @Slf4j

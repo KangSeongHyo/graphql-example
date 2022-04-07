@@ -6,4 +6,5 @@ type AnimalDTO{
     kind : String
     animalType : AnimalType
     zookeepers : [EmployeeDTO]
+    location : String
 }
