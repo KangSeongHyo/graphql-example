@@ -17,6 +17,8 @@ public class PlaceResolver implements GraphQLResolver<AnimalDTO> {
 
     public CompletableFuture<String> location(AnimalDTO animalDTO, DataFetchingEnvironment environment){
         DataLoader<String, String> locationDataLoader = environment.getDataLoader("locationDataLoader");
+        DataLoader<String, String> locationDataLoaderMap = environment.getDataLoader("locationDataLoaderMap");
+        DataLoader<String, String> locationDataLoaderTry = environment.getDataLoader("locationDataLoaderTry");
         log.info("resovler 실행");
         return locationDataLoader.load(animalDTO.getKind());
     }
